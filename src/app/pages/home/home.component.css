@@ -1,0 +1,33 @@
+.main{
+    /* width: 100%; */
+    /* margin: auto; */
+    margin: 5% 26.3%;
+}
+input{
+    border-radius: 5px;
+    border: 2px solid rgba(6, 107, 70, .8);
+    /* position: relative; */
+    width: 85%;
+}
+.search{
+    position: relative;
+}
+.fa-solid{
+    position: absolute;
+    left: 1%;
+    top: 8px;
+}
+input::placeholder{
+    padding-left: 40px;
+}
+
+.box{
+    background-color: rgba(6, 107, 70, .8);
+    color: #fff;
+    border: 5px;
+    border: 2px solid #fff;
+}
+a{
+    text-decoration: none;
+    color: rgba(6, 107, 70, .8);
+}

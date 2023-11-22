@@ -1,0 +1,40 @@
+<div class="main">
+    <h1>UX Dictionary</h1>
+    <p>Learning about UX? Or working with UX professionals? Find out 
+        what they're talking about  in this community-built UX 
+        dictionary 👇 
+    </p>
+
+
+    <div class="search">
+        <form [formGroup]="searchForm">
+            <input #word type="text" class="form-control" formControlName="word"
+            id="search" placeholder="type in any word" (keyup.enter)="update(word.value)"
+            (blur)="update(word.value); word.value = ''" [(ngModel)]="searchWord"
+            (ngModelChange)="searchKey($event)"
+            />
+            <i class="fa-solid fa-magnifying-glass" style="color: rgba(6, 107, 70, .8);"></i>
+            <ul >
+                <li *ngFor="let word of searchList">
+                    <a (click)="update(word)">{{ word }}</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <!-- <h1>Get Method</h1> -->
+    <!-- <p>{{ getJsonValue | json }}</p> -->
+
+    <div class="row" *ngIf="word">
+        <ng-container *ngFor="let data of words">
+            <div class="box">
+                <h2 >{{ data.fl}}</h2>
+                <h2 >{{ data.shortdef }}</h2>
+                <h2 > SYNONYMS: {{ data.syns}}</h2>
+                <!-- <h2 >{{ data.def.sseq.dt }}</h2> -->
+
+                <!-- <h2 >{{ data.ins.sound}}</h2> -->
+            </div>
+        </ng-container>
+    </div>
+</div>

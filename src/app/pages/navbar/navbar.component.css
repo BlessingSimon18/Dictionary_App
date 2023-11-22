@@ -1,0 +1,12 @@
+.navbar-brand, .btn{
+    color: rgba(6, 107, 70, .8);
+}
+.left{
+    font-weight: 600;
+}
+
+#btn2{
+    color: #fff;
+    background-color: rgba(6, 107, 70, .8);
+    font-weight: 600;
+}
