@@ -53,18 +53,17 @@ export class HomeComponent implements OnInit {
     if (word) {
       if(this.searchList.length==0){
         this.searchList.push(word);
-      }
-      this.searchList.forEach((data:any, index:any) => {
-        if(this.searchList.length>0 && index==this.searchList.length-1 && data!=word){
-      
+      }else{
+        if (!this.searchList.includes(word)) {
           this.searchList.push(word);
-          
-        } 
-        this.wordearch=word;
-        fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${this.wordearch}?key=bb8a8e37-ca11-4570-9191-bdc5c655a8ce`)
-        .then((response) => response.json())
-        .then((json)=>   this.words = json);
-      });
+        }
+      }
+
+      this.wordearch=word;
+      fetch(`https://dictionaryapi.com/api/v3/references/collegiate/json/${this.wordearch}?key=bb8a8e37-ca11-4570-9191-bdc5c655a8ce`)
+      .then((response) => response.json())
+      .then((json)=>   this.words = json);
+     
     }
   }
 
